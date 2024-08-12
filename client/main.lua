@@ -54,8 +54,13 @@ local function getNextLocation()
             end
         end
     else
+        local max = 1000
         while hasDoneLocation(current) do
             current = math.random(#Config.TruckerJobLocations["stores"])
+            max = max-1
+            if max == 0 then
+                return 0
+            end
         end
     end
 
@@ -514,6 +519,7 @@ end)
 
 RegisterNetEvent('qb-truckerjob:client:PaySlip', function()
     if JobsDone > 0 then
+        QBCore.Functions.Notify("Time to get payd", "success")
         TriggerServerEvent("qb-trucker:server:01101110", JobsDone)
         JobsDone = 0
         if #LocationsDone == #Config.TruckerJobLocations["stores"] then

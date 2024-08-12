@@ -14,7 +14,7 @@ local Translations = {
         paid_with_cash = "$%{value} Deposit Paid With Cash",
         paid_with_bank = "$%{value} Deposit Paid From Bank",
         refund_to_cash = "$%{value} Deposit Paid With Cash",
-        you_earned = "You Earned $%{value}",
+        you_earned = "You Earned $%{value} (Drops: $%{value2} Bonus: $%{value3} Tax: $%{value4})",
         payslip_time = "You Went To All The Shops .. Time For Your Payslip!",
     },
     menu = {

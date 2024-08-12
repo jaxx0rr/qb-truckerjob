@@ -38,10 +38,15 @@ RegisterNetEvent('qb-trucker:server:01101110', function(drops)
         bonus = (math.ceil(Config.TruckerJobDropPrice / 100) * Config.TruckerJobBonus) * drops
     end
     local payment = (Config.TruckerJobDropPrice * drops + bonus)
-    payment = payment - (math.ceil(payment / 100) * Config.TruckerJobPaymentTax)
-    Player.Functions.AddJobReputation(drops)
+
+    local tax = (math.ceil(payment / 100) * Config.TruckerJobPaymentTax)
+
+    payment = payment - tax
+
+    --Player.Functions.AddJobReputation(drops) --obsolete
+    Player.Functions.AddRep('trucker', drops)
     Player.Functions.AddMoney('bank', payment, 'trucker-salary')
-    TriggerClientEvent('QBCore:Notify', src, Lang:t('success.you_earned', { value = payment }), 'success')
+    TriggerClientEvent('QBCore:Notify', src, Lang:t('success.you_earned', { value = payment, value2 = drops, value3 = bonus, value4 = tax}), 'success')
 end)
 
 RegisterNetEvent('qb-trucker:server:nano', function()
