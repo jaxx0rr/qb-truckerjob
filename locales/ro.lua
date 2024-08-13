@@ -14,7 +14,7 @@ local Translations = {
         paid_with_cash = "$%{value} Depozit plătit cu numerar",
         paid_with_bank = "$%{value} Depozit plătit din contul bancar",
         refund_to_cash = "$%{value} Depozit primit in numerar",
-        you_earned = "Ai castigat $%{value} (Predari: $%{value2} Bonus: $%{value3} Taxa: $%{value4})",
+        you_earned = "Ai castigat $%{value} (Predari: %{value2} Bonus: $%{value3} Taxa: $%{value4})",
         payslip_time = "Te-ai dus la toate magazinele .. E timpul pentru plata ta!",
     },
     menu = {
