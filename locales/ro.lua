@@ -1,4 +1,4 @@
-o cutielocal Translations = {
+local Translations = {
     error = {
         no_deposit = "Depozit necesar $%{value}",
         cancelled = "Anulat",
